@@ -3,8 +3,8 @@ Factory for creating ML model instances.
 """
 from typing import Dict, Any
 
-from smart_dq_rule.ml_models.base_model import BaseModel
-from smart_dq_rule.ml_models.huggingface_model import HuggingFaceModel
+from ml_models.base_model import BaseModel
+from ml_models.huggingface_model import HuggingFaceModel
 
 
 class ModelFactory:
