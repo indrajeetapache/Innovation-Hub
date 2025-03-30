@@ -7,7 +7,7 @@ from typing import Dict, List, Any, Optional
 import re
 from datetime import datetime
 
-from smart_dq_rule.profilers.base_profiler import BaseProfiler
+from profilers.base_profiler import BaseProfiler
 
 
 class ColumnProfiler(BaseProfiler):
