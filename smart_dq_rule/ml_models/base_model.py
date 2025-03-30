@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+from typing import Dict, List, Any
+
 class BaseModel(ABC):
     """Abstract base class for all ML model interfaces."""
     
