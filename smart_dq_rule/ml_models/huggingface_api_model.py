@@ -5,8 +5,8 @@ import json
 import requests
 from typing import Dict, List, Any
 
-from smart_dq_rule.ml_models.base_model import BaseModel
-from smart_dq_rule.rule_engines.rule_catalog import RuleCatalog
+from ml_models.base_model import BaseModel
+from rule_engines.rule_catalog import RuleCatalog
 
 
 class HuggingFaceAPIModel(BaseModel):

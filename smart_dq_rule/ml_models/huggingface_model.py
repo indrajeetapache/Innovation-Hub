@@ -6,8 +6,8 @@ from typing import Dict, List, Any
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
-from smart_dq_rule.ml_models.base_model import BaseModel
-from smart_dq_rule.rule_engines.rule_catalog import RuleCatalog
+from ml_models.base_model import BaseModel
+from rule_engines.rule_catalog import RuleCatalog
 
 
 class HuggingFaceModel(BaseModel):
