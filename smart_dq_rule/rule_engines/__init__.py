@@ -1,25 +1,14 @@
-# Import components
-from .ml_rule_engine import MLRuleEngine
-from .rule_catalog import (
-    BaseRule,
-    CompletenessRule,
+# Then, use this specific import sequence:
+from common.data_types import PIIType, RuleCategory
+
+# Import BaseRule and other rule classes first
+from rule_engines.rule_catalog import (
+    BaseRule,  # Import this *explicitly*
+    CompletenessRule, 
     FormatRule,
-    UniquenessRule,
-    PIIDetectionRule,
-    RuleCategory,
-    PIIType,
-    RuleCatalog
+    UniquenessRule, 
+    PIIDetectionRule
 )
 
-__all__ = [
-    'MLRuleEngine',
-    'BaseRule',
-    'CompletenessRule',
-    'FormatRule',
-    'UniquenessRule',
-    'PIIDetectionRule',
-    'RuleCategory',
-    'PIIType',
-    'RuleCatalog'
-]
-print(" rule engine init completed ")
+# Then import RuleCatalog separately
+from rule_engines.rule_catalog import RuleCatalog
