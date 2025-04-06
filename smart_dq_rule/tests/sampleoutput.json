@@ -1,1 +1,7447 @@
-
+{
+  "transaction_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": true,
+      "confidence": 0.7685247834990175,
+      "parameters": {
+        "primary_key": true,
+        "threshold": 0.99
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "account_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "transaction_date": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "datetime64[ns]"
+      }
+    },
+    "date_range": {
+      "applies": true,
+      "confidence": 0.95,
+      "parameters": {
+        "min_date": "",
+        "max_date": "",
+        "allow_future": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "process_date": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "int32"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "min_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "max_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "max_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "transaction_time": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "transaction_type": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": false,
+        "allowed_values": "from_data",
+        "ignore_case": true
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "amount": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float32"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "currency": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "merchant_name": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.03204960506378116,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "merchant_category": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.03204960506378116,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "merchant_location": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.03204960506378116,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "transaction_status": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "reference_number": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": true,
+      "confidence": 0.7101337121968662,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.9646694616025635
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "risk_score": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.04728363903809368,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "Int64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "min_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "max_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "max_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "fraud_flag": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "bool"
+      }
+    },
+    "boolean_values": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "allowed_values": [
+          true,
+          false
+        ]
+      }
+    },
+    "flag_alerting": {
+      "applies": true,
+      "confidence": 0.95,
+      "parameters": {
+        "alert_on_true": true,
+        "severity": "high"
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "anti_money_laundering_check": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9237267272849033,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "ip_address": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.8813825808163754,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "device_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.7298008872354509,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "session_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.7311244480963857,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "user_agent": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.27216872936549474,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "channel": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "created_by": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "created_at": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "datetime64[ns]"
+      }
+    },
+    "date_range": {
+      "applies": true,
+      "confidence": 0.95,
+      "parameters": {
+        "min_date": "",
+        "max_date": "",
+        "allow_future": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "updated_by": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.0066928509242848554,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "updated_at": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.0066928509242848554,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "record_status": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "customer_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "account_type": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "account_status": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "opening_date": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "datetime64[ns]"
+      }
+    },
+    "date_range": {
+      "applies": true,
+      "confidence": 0.95,
+      "parameters": {
+        "min_date": "",
+        "max_date": "",
+        "allow_future": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "closing_date": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.0066928509242848554,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "account_balance": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "interest_rate": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.43149091773810494,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float32"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "credit_limit": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.09253601263342014,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "Int64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "min_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "max_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "max_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "available_credit": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.09253601263342014,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float64"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "minimum_payment": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.09253601263342014,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "float32"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "precision_check": {
+      "applies": true,
+      "confidence": 0.85,
+      "parameters": {
+        "max_decimal_places": 4,
+        "round_to": 2
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "first_name": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "last_name": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "email": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "phone_number": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "date_of_birth": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "datetime64[ns]"
+      }
+    },
+    "date_range": {
+      "applies": true,
+      "confidence": 0.95,
+      "parameters": {
+        "min_date": "",
+        "max_date": "",
+        "allow_future": false
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "ssn": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "address_line1": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "address_line2": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.11879941834320866,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "city": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "state": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": false,
+        "allowed_values": "from_data",
+        "ignore_case": true
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "zip_code": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "int32"
+      }
+    },
+    "range_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_value": 0.0,
+        "max_value": 0.0
+      }
+    },
+    "min_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "max_value_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "max_allowed": 0.0,
+        "strict": false
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "country": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "customer_segment": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "loyalty_tier": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.926675252442133,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "marketing_campaign_id": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.8844837039166922,
+      "parameters": {
+        "required": "False",
+        "threshold": 0.9
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "object"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "opt_in_marketing": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "bool"
+      }
+    },
+    "boolean_values": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "allowed_values": [
+          true,
+          false
+        ]
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  },
+  "kyc_status": {
+    "completeness": {
+      "applies": true,
+      "confidence": 0.9933071490757153,
+      "parameters": {
+        "required": "True",
+        "threshold": 1.0
+      }
+    },
+    "uniqueness": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "primary_key": false,
+        "threshold": 0.95
+      }
+    },
+    "type_validation": {
+      "applies": true,
+      "confidence": 1.0,
+      "parameters": {
+        "expected_type": "category"
+      }
+    },
+    "format_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[\\w\\.-]+@[\\w\\.-]+\\.\\w+$",
+        "threshold": 0.95
+      }
+    },
+    "format_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "(\\+\\d{1,3}[\\s-]?)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}",
+        "threshold": 0.95
+      }
+    },
+    "format_date": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^(\\d{1,2}[/-]\\d{1,2}[/-]\\d{2,4}|\\d{4}-\\d{2}-\\d{2})$",
+        "threshold": 0.95
+      }
+    },
+    "format_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{4}[- ]?\\d{4}[- ]?\\d{4}[- ]?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{3}-?\\d{2}-?\\d{4}$",
+        "threshold": 0.95
+      }
+    },
+    "format_zipcode": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^\\d{5}(-\\d{4})?$",
+        "threshold": 0.95
+      }
+    },
+    "format_uuid": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+        "threshold": 0.95
+      }
+    },
+    "string_length": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "min_length": 1,
+        "max_length": 120.0
+      }
+    },
+    "allowed_values": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "strict": true,
+        "allowed_values": "from_data",
+        "ignore_case": false
+      }
+    },
+    "whitespace_check": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_whitespace_only": false,
+        "trim_whitespace": true
+      }
+    },
+    "data_type_consistency": {
+      "applies": true,
+      "confidence": 0.9,
+      "parameters": {
+        "allow_mixed_types": false,
+        "detect_numeric_strings": true,
+        "detect_date_strings": true
+      }
+    },
+    "pii_email": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_phone": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_ssn": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_credit_card": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "high",
+        "masking_required": true,
+        "threshold": 0.5
+      }
+    },
+    "pii_name": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    },
+    "pii_address": {
+      "applies": false,
+      "confidence": 0.0,
+      "parameters": {
+        "severity": "medium",
+        "masking_required": false,
+        "threshold": 0.5
+      }
+    }
+  }
+}
