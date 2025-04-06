@@ -1,85 +1,190 @@
-Smart DQ Rule System
-====================
-A revolutionary approach to data quality management that employs machine learning and pattern analysis to automatically suggest and implement DQ rules.
+# Smart Data Quality Rule System
 
-What is this?
-==============
-Ever spent hours manually defining data quality rules for your tables? This project aims to fix that. The Smart DQ Rule system analyzes your database columns, automatically identifies PII data, and suggests appropriate data quality rules based on historical patterns in your data.
-Project Structure
+## Overview
 
+The **Smart Data Quality (Smart DQ) Rule System** is an intelligent framework that automatically analyzes data columns and applies appropriate data quality rules based on column characteristics. The system combines rule-based heuristics with machine learning to provide comprehensive data quality validation that adapts to your specific data patterns.
 
-Copysmart_dq_rule/
-├── classifiers/       # PII detection and classification components
-├── profilers/         # Data profiling and pattern detection
-├── rule_engines/      # Rule suggestion and implementation logic
-├── utils/             # Shared utilities and helper functions
-├── config/            # Configuration files and settings
-├── tests/             # Unit and integration tests
-└── examples/          # Example notebooks and usage guides
+## Key Features
 
-Folder Purposes
-===============
-classifiers: 
-Contains all the code related to automatic classification of columns as PII or non-PII. This is where our rule-based and ML-based approaches determine if your data contains sensitive information.
+- **Automatic Rule Detection**: Intelligently determines appropriate data quality rules for each column  
+- **Type-Specific Rules**: Specialized rules for strings, integers, floats, dates, and boolean columns  
+- **Statistical Confidence Scoring**: Uses statistical methods to assign confidence scores to rule applicability  
+- **Machine Learning Integration**: XGBoost models learn patterns to improve rule recommendations  
+- **PII Detection**: Identifies potentially sensitive data requiring special handling  
+- **Cross-Validation**: Ensures rule model performance through k-fold validation  
 
-profilers:
-Houses the data profiling components that analyze 6 months of historical data to discover patterns, distributions, and anomalies. The PySpark and PyDeequ integration happens here.
+## How It Works
 
-rule_engines: 
-The brains of the operation - takes the outputs from classification and profiling to generate appropriate data quality rules, prioritize them, and prepare them for implementation.
-utils: 
-Shared functionality like database connectors, logging, monitoring metrics, and other helper functions that support the main components.
+### 1. Column Profiling
 
-config: 
-Configuration files for different environments, default rule sets, and system parameters. Modify these to adapt the system to your specific needs.
+The system first extracts comprehensive features from each column, including:
 
-tests: 
-Comprehensive test suite to ensure stability and correctness as the system evolves. Includes unit tests for individual components and integration tests for end-to-end flows.
+- Basic statistics (count, null ratio, unique count, min/max values)
+- Data type information
+- Pattern detection (emails, phone numbers, dates, etc.)
+- Distribution characteristics (mean, std dev, percentiles)
+- Text metrics (length distribution, whitespace analysis)
 
-examples: 
-Ready-to-run examples and notebooks that demonstrate how to use the system in real-world scenarios. Great starting point for new users.
+```python
+# Extract features for all columns
+features_by_column = extract_dataframe_features(df)
+2. Rule Determination
+For each column, the system analyzes features to determine which rules should apply. Rules are categorized by data type:
 
-Key Features
-============
-Automatic PII Detection: Identifies personally identifiable information without manual tagging
-Historical Data Analysis: Studies 6 months of data to understand patterns and detect anomalies
-Intelligent Rule Suggestion: Recommends DQ rules based on data characteristics
-Scalable Processing: Built on PySpark to handle datasets of any size
-Plug-and-Play Architecture: Modular design makes it easy to extend or customize
+Common Rules (All Types)
 
-Getting Started
-================
-Install the required dependencies:
-Copypip install -r requirements.txt
+Completeness
+Uniqueness
+Type validation
+String Column Rules
 
-Configure your database connection in config/database.json
-Run a quick test to ensure everything's working:
-Copypython -m smart_dq_rule.tests.quick_test
+Format validation (email, phone, date, etc.)
+String length
+Allowed values
+Whitespace checks
+Data type consistency
+Integer Column Rules
 
-Check out the examples directory for usage examples
+Range checks
+Min/Max value validation
+Float Column Rules
 
-Development
-===========
-Want to contribute? Great! This project follows a modular architecture designed for extension. If you want to add new features:
+Range checks
+Precision validation
+Average value checks
+Standard deviation checks
+Date Column Rules
 
-New classifiers go in the classifiers directory
-New profiling techniques go in the profilers directory
-New rule types go in the rule_engines directory
+Date range validation
+Future date checks
+Boolean Column Rules
 
-Make sure to add appropriate tests and update the documentation!
-Technology Stack
+Boolean value validation
+Flag alerting
+PII Detection
 
-PySpark for distributed data processing
-PyDeequ for advanced data profiling
-Scikit-learn for machine learning models
-Pandas for data manipulation
-Optional integration with Hugging Face transformers for advanced NLP
+Email, phone, SSN, credit card detection
+Name and address detection
+# Determine applicable rules for all columns
+rules_by_column = {}
+for column_name, column_features in features_by_column.items():
+    rules_by_column[column_name] = determine_applicable_rules(column_features)
+3. Statistical Confidence Calculation
+The system assigns confidence scores (0.0–1.0) to each rule using statistical methods:
 
-Future Roadmap
-================
-Implement reinforcement learning for rule optimization
-Develop a web-based UI for rule management
+Completeness: Logistic function based on null ratio
+Uniqueness: Z-score comparison to industry standard thresholds
+Range Checks: Empirical rule (68–95–99.7) for normal distributions
+Format Rules: Match ratio against expected patterns
+String Consistency: Coefficient of variation for length and patterns
+def calculate_rule_confidence(rule_type, column_features):
+    if rule_type == 'completeness':
+        null_ratio = column_features.get('null_ratio', 0)
+        k = 10
+        confidence = 1.0 / (1.0 + math.exp(k * (null_ratio - 0.5)))
+        return confidence
 
+    elif rule_type == 'range_check' and 'mean' in column_features and 'std' in column_features:
+        mean = column_features.get('mean')
+        std = column_features.get('std')
+        min_val = column_features.get('min')
+        max_val = column_features.get('max')
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+        if min_val >= mean - 3 * std and max_val <= mean + 3 * std:
+            return 0.95
+4. Machine Learning Enhancement
+XGBoost models are trained to predict rule applicability based on column features:
+
+Learns from historical rule assignments
+Detects patterns missed by rule-based logic
+Predicts rules for unseen columns
+# Train XGBoost models with cross-validation
+models, numeric_features, feature_importances, cv_results = train_rule_prediction_models(
+    features_by_column, rules_by_column, n_folds=5
+)
+
+# Predict using XGBoost
+def predict_rules_with_xgboost(column_features, models, numeric_features):
+    # Predict rules with trained models
+    pass
+5. Integration and Validation
+The system compares rule-based and ML-based recommendations:
+
+Agreement statistics
+Confidence-weighted rule recommendations
+Feature importance insights
+# Compare rule-based and ML-based predictions
+results = compare_all_rule_predictions(features_by_column, rules_by_column, models, numeric_features)
+Required Data for Optimal Results
+
+Column Characteristics
+Include the following features per column:
+
+Basic statistics: count, null_ratio, unique_count, unique_ratio
+Type indicators: is_string, is_integer, is_float, is_datetime, is_boolean, is_categorical
+Numeric stats: min, max, mean, median, std, percentiles
+Text features: min_length, max_length, mean_length, length_std, whitespace_only_ratio
+Pattern matches: email_match_ratio, phone_match_ratio
+Date features: min_date, max_date, date_range_days
+Historical Data
+Historical rule assignments improve ML accuracy
+9+ months of column data recommended
+At least 30–50 columns for robust training
+Future Enhancements
+
+Planned Improvements
+Advanced ML Techniques
+Ensemble and deep learning models
+Active learning integration
+Expanded Rule Types
+Cross-column and domain-specific rules
+Time series validations
+Performance Optimization
+Parallel processing
+Feature selection and incremental learning
+User Interaction
+Feedback loops and rule customizations
+Integration Options
+API support
+CI/CD pipeline validation
+Database connectivity
+Technical Requirements
+
+Python 3.6+
+pandas, numpy, scikit-learn
+xgboost>=3.0
+Installation
+
+pip install -r requirements.txt
+Usage Example
+
+# Import modules
+from smart_dq.profilers.column_profiler import ColumnProfiler
+from smart_dq.profilers.profile_manager import ProfileManager
+from smart_dq.rule_engines.rule_catalog import RuleCatalog
+
+# Initialize and profile
+profiler = ColumnProfiler()
+profile_manager = ProfileManager(profiler)
+
+df = pd.read_csv('your_data.csv')
+table_metadata = profile_manager.profile_table(df)
+
+features_by_column = extract_dataframe_features(df)
+
+rules_by_column = {}
+for column_name, column_features in features_by_column.items():
+    rules_by_column[column_name] = determine_applicable_rules(column_features)
+
+models, numeric_features, feature_importances, cv_results = train_rule_prediction_models(
+    features_by_column, rules_by_column, n_folds=5
+)
+
+analyze_feature_importance(feature_importances)
+
+results = compare_all_rule_predictions(
+    features_by_column, rules_by_column, models, numeric_features
+)
+
+with open('dq_rules.json', 'w') as f:
+    json.dump(rules_by_column, f, indent=2, cls=CustomJSONEncoder)
