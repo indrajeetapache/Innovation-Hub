@@ -1,0 +1,2139 @@
+{
+    "completeness": [
+      {
+        "column": "transaction_id",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "account_id",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "transaction_date",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "process_date",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "transaction_time",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "transaction_type",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "amount",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "merchant_name",
+        "confidence": 0.03204960506378116,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 0.03204960506378116,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "merchant_location",
+        "confidence": 0.03204960506378116,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "risk_score",
+        "confidence": 0.04728363903809368,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "fraud_flag",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 0.9237267272849033,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "ip_address",
+        "confidence": 0.8813825808163754,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "device_id",
+        "confidence": 0.7298008872354509,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "session_id",
+        "confidence": 0.7311244480963857,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "user_agent",
+        "confidence": 0.27216872936549474,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "created_at",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "updated_by",
+        "confidence": 0.0066928509242848554,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "updated_at",
+        "confidence": 0.0066928509242848554,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "customer_id",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "opening_date",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "closing_date",
+        "confidence": 0.0066928509242848554,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "account_balance",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "interest_rate",
+        "confidence": 0.43149091773810494,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "credit_limit",
+        "confidence": 0.09253601263342014,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "available_credit",
+        "confidence": 0.09253601263342014,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "minimum_payment",
+        "confidence": 0.09253601263342014,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "first_name",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "last_name",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "email",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "phone_number",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "date_of_birth",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "ssn",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "address_line1",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "address_line2",
+        "confidence": 0.11879941834320866,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "city",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "zip_code",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 0.926675252442133,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "marketing_campaign_id",
+        "confidence": 0.8844837039166922,
+        "parameters": {
+          "required": "False",
+          "threshold": 0.9
+        }
+      },
+      {
+        "column": "opt_in_marketing",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 0.9933071490757153,
+        "parameters": {
+          "required": "True",
+          "threshold": 1.0
+        }
+      }
+    ],
+    "uniqueness": [
+      {
+        "column": "transaction_id",
+        "confidence": 0.7685247834990175,
+        "parameters": {
+          "primary_key": true,
+          "threshold": 0.99
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 0.7101337121968662,
+        "parameters": {
+          "primary_key": false,
+          "threshold": 0.9646694616025635
+        }
+      }
+    ],
+    "type_validation": [
+      {
+        "column": "transaction_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "account_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "transaction_date",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "datetime64[ns]"
+        }
+      },
+      {
+        "column": "process_date",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "int32"
+        }
+      },
+      {
+        "column": "transaction_time",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "transaction_type",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "amount",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float32"
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "merchant_name",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "merchant_location",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "risk_score",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "Int64"
+        }
+      },
+      {
+        "column": "fraud_flag",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "bool"
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "ip_address",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "device_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "session_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "user_agent",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "created_at",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "datetime64[ns]"
+        }
+      },
+      {
+        "column": "updated_by",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float64"
+        }
+      },
+      {
+        "column": "updated_at",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float64"
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "customer_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "opening_date",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "datetime64[ns]"
+        }
+      },
+      {
+        "column": "closing_date",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float64"
+        }
+      },
+      {
+        "column": "account_balance",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float64"
+        }
+      },
+      {
+        "column": "interest_rate",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float32"
+        }
+      },
+      {
+        "column": "credit_limit",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "Int64"
+        }
+      },
+      {
+        "column": "available_credit",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float64"
+        }
+      },
+      {
+        "column": "minimum_payment",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "float32"
+        }
+      },
+      {
+        "column": "first_name",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "last_name",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "email",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "phone_number",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "date_of_birth",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "datetime64[ns]"
+        }
+      },
+      {
+        "column": "ssn",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "address_line1",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "address_line2",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "city",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "zip_code",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "int32"
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      },
+      {
+        "column": "marketing_campaign_id",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "object"
+        }
+      },
+      {
+        "column": "opt_in_marketing",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "bool"
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 1.0,
+        "parameters": {
+          "expected_type": "category"
+        }
+      }
+    ],
+    "string_length": [
+      {
+        "column": "transaction_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "account_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "transaction_time",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "transaction_type",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "merchant_name",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "merchant_location",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "ip_address",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "device_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "session_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "user_agent",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "customer_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "first_name",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "last_name",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "email",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "phone_number",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "ssn",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "address_line1",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "address_line2",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "city",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "marketing_campaign_id",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 0.9,
+        "parameters": {
+          "min_length": 1,
+          "max_length": 120.0
+        }
+      }
+    ],
+    "whitespace_check": [
+      {
+        "column": "transaction_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "account_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "transaction_time",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "transaction_type",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "merchant_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "merchant_location",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "ip_address",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "device_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "session_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "user_agent",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "customer_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "first_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "last_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "email",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "phone_number",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "ssn",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "address_line1",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "address_line2",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "city",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "marketing_campaign_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_whitespace_only": false,
+          "trim_whitespace": true
+        }
+      }
+    ],
+    "data_type_consistency": [
+      {
+        "column": "transaction_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "account_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "transaction_time",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "transaction_type",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "merchant_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "merchant_location",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "reference_number",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "ip_address",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "device_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "session_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "user_agent",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "customer_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "first_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "last_name",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "email",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "phone_number",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "ssn",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "address_line1",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "address_line2",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "city",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "marketing_campaign_id",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 0.9,
+        "parameters": {
+          "allow_mixed_types": false,
+          "detect_numeric_strings": true,
+          "detect_date_strings": true
+        }
+      }
+    ],
+    "date_range": [
+      {
+        "column": "transaction_date",
+        "confidence": 0.95,
+        "parameters": {
+          "min_date": "",
+          "max_date": "",
+          "allow_future": true
+        }
+      },
+      {
+        "column": "created_at",
+        "confidence": 0.95,
+        "parameters": {
+          "min_date": "",
+          "max_date": "",
+          "allow_future": true
+        }
+      },
+      {
+        "column": "opening_date",
+        "confidence": 0.95,
+        "parameters": {
+          "min_date": "",
+          "max_date": "",
+          "allow_future": true
+        }
+      },
+      {
+        "column": "date_of_birth",
+        "confidence": 0.95,
+        "parameters": {
+          "min_date": "",
+          "max_date": "",
+          "allow_future": false
+        }
+      }
+    ],
+    "range_check": [
+      {
+        "column": "process_date",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "amount",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "risk_score",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "updated_by",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "updated_at",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "closing_date",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "account_balance",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "interest_rate",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "credit_limit",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "available_credit",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "minimum_payment",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      },
+      {
+        "column": "zip_code",
+        "confidence": 0.9,
+        "parameters": {
+          "min_value": 0.0,
+          "max_value": 0.0
+        }
+      }
+    ],
+    "min_value_check": [
+      {
+        "column": "process_date",
+        "confidence": 0.9,
+        "parameters": {
+          "min_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "risk_score",
+        "confidence": 0.9,
+        "parameters": {
+          "min_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "credit_limit",
+        "confidence": 0.9,
+        "parameters": {
+          "min_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "zip_code",
+        "confidence": 0.9,
+        "parameters": {
+          "min_allowed": 0.0,
+          "strict": false
+        }
+      }
+    ],
+    "max_value_check": [
+      {
+        "column": "process_date",
+        "confidence": 0.9,
+        "parameters": {
+          "max_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "risk_score",
+        "confidence": 0.9,
+        "parameters": {
+          "max_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "credit_limit",
+        "confidence": 0.9,
+        "parameters": {
+          "max_allowed": 0.0,
+          "strict": false
+        }
+      },
+      {
+        "column": "zip_code",
+        "confidence": 0.9,
+        "parameters": {
+          "max_allowed": 0.0,
+          "strict": false
+        }
+      }
+    ],
+    "allowed_values": [
+      {
+        "column": "transaction_type",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": false,
+          "allowed_values": "from_data",
+          "ignore_case": true
+        }
+      },
+      {
+        "column": "currency",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "merchant_category",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "transaction_status",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "anti_money_laundering_check",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "channel",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "created_by",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "record_status",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "account_type",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "account_status",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "state",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": false,
+          "allowed_values": "from_data",
+          "ignore_case": true
+        }
+      },
+      {
+        "column": "country",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "customer_segment",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "loyalty_tier",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      },
+      {
+        "column": "kyc_status",
+        "confidence": 0.9,
+        "parameters": {
+          "strict": true,
+          "allowed_values": "from_data",
+          "ignore_case": false
+        }
+      }
+    ],
+    "precision_check": [
+      {
+        "column": "amount",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "updated_by",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "updated_at",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "closing_date",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "account_balance",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "interest_rate",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "available_credit",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      },
+      {
+        "column": "minimum_payment",
+        "confidence": 0.85,
+        "parameters": {
+          "max_decimal_places": 4,
+          "round_to": 2
+        }
+      }
+    ],
+    "boolean_values": [
+      {
+        "column": "fraud_flag",
+        "confidence": 1.0,
+        "parameters": {
+          "allowed_values": [
+            true,
+            false
+          ]
+        }
+      },
+      {
+        "column": "opt_in_marketing",
+        "confidence": 1.0,
+        "parameters": {
+          "allowed_values": [
+            true,
+            false
+          ]
+        }
+      }
+    ],
+    "flag_alerting": [
+      {
+        "column": "fraud_flag",
+        "confidence": 0.95,
+        "parameters": {
+          "alert_on_true": true,
+          "severity": "high"
+        }
+      }
+    ]
+  }
