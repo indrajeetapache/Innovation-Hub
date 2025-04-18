@@ -1,3 +1,8 @@
+import pandas as pd
+import numpy as np
+import time
+from datetime import timedelta
+
 def generate_wealth_management_data(start_date, end_date, num_customers=200, 
                                    num_accounts_per_customer=3, daily_records=1000):
     """
