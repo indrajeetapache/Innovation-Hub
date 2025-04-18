@@ -49,20 +49,41 @@ def generate_wealth_management_data(start_date, end_date, num_customers=200,
         market_condition = np.random.normal(0, 1)
 
         for account_id in daily_account_sample:
-            account_info = account_df[account_df['account_id'] == account_id].iloc[0]
+            try:
+                account_info = account_df[account_df['account_id'] == account_id].iloc[0]
 
-            # <same logic for balance, transactions, etc.>
+                base_balance = np.random.lognormal(11, 1)
+                trend_factor = 1 + ((process_date - start).days / 365) * 0.05
+                type_factor = {'SAVINGS': 0.8, 'CHECKING': 1.0, 'INVESTMENT': 1.2, 'RETIREMENT': 0.9}[account_info['account_type']]
+                risk_factor = {'LOW': 0.7, 'MEDIUM': 1.0, 'HIGH': 1.3}[account_info['risk_profile']]
+                balance = base_balance * trend_factor * type_factor * (1 + 0.1 * market_condition * risk_factor) * np.random.uniform(0.95, 1.05)
 
-            # record = {...}  ← unchanged
+                record = {
+                    'process_date': process_date,
+                    'customer_id': account_info['customer_id'],
+                    'account_id': account_id,
+                    'account_type': account_info['account_type'],
+                    'risk_profile': account_info['risk_profile'],
+                    'relationship_manager': account_info['relationship_manager'],
+                    'balance': round(balance, 2),
+                    'market_condition': round(market_condition, 4),
+                    'trend_factor': round(trend_factor, 4),
+                    'risk_adjusted_factor': round(risk_factor, 2),
+                    'account_type_factor': round(type_factor, 2),
+                    'base_balance': round(base_balance, 2)
+                }
 
-            data.append(record)
-            total_records += 1
+                data.append(record)
+                total_records += 1
 
-            if total_records % 100000 == 0:
-                elapsed = time.time() - start_time
-                rate = total_records / elapsed
-                print(f"⚡ {total_records:,} records generated ({(total_records / target_records) * 100:.1f}%)")
-                print(f"🚀 Speed: {rate:.2f} rec/sec | ⏱️ Est time left: {((target_records - total_records) / rate) / 60:.2f} min")
+                if total_records % 100000 == 0:
+                    elapsed = time.time() - start_time
+                    rate = total_records / elapsed
+                    print(f"⚡ {total_records:,} records generated ({(total_records / target_records) * 100:.1f}%)")
+                    print(f"🚀 Speed: {rate:.2f} rec/sec | ⏱️ Est time left: {((target_records - total_records) / rate) / 60:.2f} min")
+
+            except Exception as e:
+                print(f"❌ Skipped record due to error: {e} | Account ID: {account_id}")
 
     print("\n✅ Step 5: Finalizing and converting to DataFrame...")
     df = pd.DataFrame(data)
