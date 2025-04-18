@@ -93,5 +93,5 @@ def generate_wealth_management_data(start_date, end_date, num_customers=200,
     print(f"📐 Total columns: {len(df.columns)}")
     print(f"💾 Memory used: {df.memory_usage(deep=True).sum() / (1024 ** 2):.2f} MB")
     print(f"⏳ Total time: {time.time() - start_time:.2f} sec")
-
+    print("Data load completed")
     return df
