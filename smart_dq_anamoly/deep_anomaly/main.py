@@ -1,205 +1,77 @@
-"""
-Main script for time series anomaly detection in Google Colab.
-
-This script brings together all the components of the anomaly detection system.
-"""
-import os
-import numpy as np
+from wealth_time_series_converter import WealthTimeSeriesConverter
+from flexible_anomaly_detection import FlexibleAnomalyDetector
 import pandas as pd
-import torch
-import matplotlib.pyplot as plt
-from typing import Dict, Any, Optional, List
 
-# Import custom modules
-from config import Config
-from data_module import DataManager
-from model_module import ModelFactory
-from training_module import Trainer
-from detection_module import AnomalyDetector, MultiLayerAnomalyDetector
-from visualization_module import Visualizer
+# Load your data
+df = pd.read_csv('your_data.csv')  # Or use your data generator
 
-def run_anomaly_detection(
-    df: pd.DataFrame,
-    target_col: str,
-    timestamp_col: str,
-    config_params: Dict[str, Any] = None,
-    visualize: bool = True
-) -> Dict[str, Any]:
-    """
-    Run full anomaly detection pipeline on a DataFrame.
-    
-    Args:
-        df: Input DataFrame containing time series data
-        target_col: Column to analyze for anomalies
-        timestamp_col: Column containing timestamps
-        config_params: Optional configuration parameters to override defaults
-        visualize: Whether to create visualizations
-        
-    Returns:
-        Dictionary with results from anomaly detection
-    """
-    print("\n===== Time Series Anomaly Detection System =====")
-    print(f"Analyzing column '{target_col}' in DataFrame with {len(df)} rows")
-    
-    # Initialize configuration
-    config = Config(config_params)
-    
-    # Initialize data manager
-    data_manager = DataManager(
-        seq_length=config.seq_length,
-        test_size=config.test_size,
-        batch_size=config.batch_size,
-        scaler_type=config.scaler_type,
-        random_state=config.random_state
-    )
-    
-    # Prepare data
-    print("\n----- Data Preparation -----")
-    data_dict = data_manager.prepare_data(df, target_col=target_col)
-    
-    # Check for seasonality patterns
-    print("\n----- Seasonality Analysis -----")
-    seasonality = data_manager.detect_seasonality(df, target_col=target_col, timestamp_col=timestamp_col)
-    
-    # Create model
-    print("\n----- Model Creation -----")
-    model = ModelFactory.create_model(
-        model_type=config.model_type,
-        input_dim=config.input_dim,
-        hidden_dim=config.hidden_dim,
-        layer_dim=config.layer_dim,
-        dropout=config.dropout
-    )
-    
-    # Initialize trainer
-    trainer = Trainer(
-        model=model,
-        optimizer_name=config.optimizer_name,
-        learning_rate=config.learning_rate,
-        weight_decay=config.weight_decay,
-        device=config.device
-    )
-    
-    # Train model
-    print("\n----- Model Training -----")
-    history = trainer.train(
-        train_loader=data_dict['train_loader'],
-        val_loader=data_dict['test_loader'],
-        epochs=config.epochs,
-        patience=config.patience
-    )
-    
-    # Get reconstructions
-    reconstructed_test = trainer.get_reconstructions(data_dict['test_loader']).numpy()
-    
-    # Multi-layer anomaly detection
-    print("\n----- Multi-Layer Anomaly Detection -----")
-    detector = MultiLayerAnomalyDetector(model=model, device=config.device)
-    
-    # Extract timestamps if available
-    timestamps = None
-    if timestamp_col in df.columns:
-        timestamps = pd.to_datetime(df[timestamp_col]).values
-    
-    # Run multi-layer detection
-    anomaly_results = detector.detect_anomalies(
-        data=data_dict['X_scaled'],
-        seq_length=config.seq_length,
-        batch_size=config.batch_size,
-        threshold=None,
-        method=config.threshold_method,
-        contamination=config.contamination,
-        sigma=config.sigma,
-        detect_seasonal=config.detect_daily_seasonality or 
-                       config.detect_weekly_seasonality or 
-                       config.detect_monthly_seasonality,
-        seasonal_period=24 if config.detect_daily_seasonality else 
-                      7 if config.detect_weekly_seasonality else 
-                      30 if config.detect_monthly_seasonality else 24,
-        timestamp=timestamps
-    )
-    
-    # Visualize results if requested
-    if visualize:
-        print("\n----- Visualization -----")
-        os.makedirs('anomaly_results', exist_ok=True)
-        
-        # Plot training history
-        Visualizer.plot_training_history(
-            history=history,
-            title="Training History",
-            save_path="anomaly_results/training_history.png"
-        )
-        
-        # Plot reconstructions
-        original_test = data_dict['test_dataset'].sequences.numpy()
-        Visualizer.plot_reconstruction(
-            original=original_test,
-            reconstructed=reconstructed_test,
-            sample_idx=0,
-            title="Original vs Reconstructed",
-            save_path="anomaly_results/reconstruction.png"
-        )
-        
-        # Plot multi-layer anomalies
-        Visualizer.plot_multi_layer_anomalies(
-            data=data_dict['X_scaled'],
-            anomaly_results=anomaly_results,
-            timestamps=timestamps,
-            save_path="anomaly_results/multi_layer_anomalies.png"
-        )
-        
-        # Plot seasonal patterns if available
-        if seasonality:
-            Visualizer.plot_seasonal_patterns(
-                data=data_dict['X_scaled'],
-                seasonal_info=seasonality,
-                save_path="anomaly_results/seasonal_patterns.png"
-            )
-        
-        print(f"Visualizations saved to 'anomaly_results/' directory")
-    
-    # Return results
-    results = {
-        'anomaly_results': anomaly_results,
-        'data_dict': data_dict,
-        'history': history,
-        'model': model,
-        'seasonality': seasonality,
-        'config': config
+# Convert to time series format
+converter = WealthTimeSeriesConverter()
+time_series_df = converter.prepare_for_lstm(df)
+
+# Initialize the flexible detector
+detector = FlexibleAnomalyDetector(
+    default_config={
+        'seq_length': 14,
+        'hidden_dim': 64,
+        'layer_dim': 2,
+        'epochs': 50,
+        'contamination': 0.01
     }
-    
-    print("\n===== Anomaly Detection Complete =====")
-    return results
+)
 
+# Example 1: Analyze multiple accounts and multiple columns
+results = detector.detect_anomalies_by_group(
+    df=time_series_df,
+    group_by='account_id',                    # Group by account_id
+    target_columns=['balance', 'market_condition'],  # Analyze multiple columns
+    timestamp_col='process_date',
+    visualize=True,
+    output_dir='anomaly_results_accounts'
+)
 
-# Example usage (in Google Colab)
-if __name__ == "__main__":
-    # Example with synthetic data
-    print("This module should be imported in Google Colab, not run directly.")
-    print("Example usage:")
-    print("```python")
-    print("from main import run_anomaly_detection")
-    print("")
-    print("# Your dataframe - replace this with your actual data")
-    print("df = pd.read_csv('your_data.csv')")
-    print("")
-    print("# Run anomaly detection")
-    print("results = run_anomaly_detection(")
-    print("    df=df,")
-    print("    target_col='your_value_column',")
-    print("    timestamp_col='your_timestamp_column',")
-    print("    config_params={")
-    print("        'seq_length': 30,")
-    print("        'hidden_dim': 64,")
-    print("        'layer_dim': 2,")
-    print("        'model_type': 'lstm_ae',")
-    print("        'epochs': 50,")
-    print("        'batch_size': 64,")
-    print("        'contamination': 0.01,")
-    print("        'detect_daily_seasonality': True,")
-    print("        'detect_weekly_seasonality': True")
-    print("    },")
-    print("    visualize=True")
-    print(")")
-    print("```")
+# Access results
+for account_id, account_results in results['results'].items():
+    print(f"\nAccount: {account_id}")
+    for column, column_results in account_results.items():
+        if 'error' not in column_results:
+            print(f"  {column}: {column_results['anomaly_count']} anomalies detected")
+            print(f"  Anomaly dates: {column_results['anomaly_dates'][:5]}...")  # Show first 5
+
+# Example 2: Group by different columns (e.g., by risk_profile)
+results_by_risk = detector.detect_anomalies_by_group(
+    df=time_series_df,
+    group_by='risk_profile',                  # Group by risk_profile instead
+    target_columns='balance',
+    timestamp_col='process_date',
+    config={'seq_length': 30},                # Override some config
+    visualize=True,
+    output_dir='anomaly_results_risk_profiles'
+)
+
+# Example 3: Multiple grouping columns
+results_complex = detector.detect_anomalies_by_group(
+    df=time_series_df,
+    group_by=['account_type', 'risk_profile'],  # Group by multiple columns
+    target_columns='balance',
+    timestamp_col='process_date',
+    visualize=True,
+    output_dir='anomaly_results_complex'
+)
+
+# Example 4: Analyze entire dataset without grouping
+results_all = detector.detect_anomalies_multiple_columns(
+    df=time_series_df,
+    target_columns=['balance', 'market_condition', 'interest_rate'],
+    timestamp_col='process_date',
+    visualize=True,
+    output_dir='anomaly_results_all'
+)
+
+# Print summary
+print("\n=== ANOMALY DETECTION SUMMARY ===")
+print(f"Total anomalies found: {results['summary']['total_anomalies']}")
+print(f"Groups with anomalies: {results['summary']['groups_with_anomalies']}")
+print("\nAnomalies by column:")
+for col, count in results['summary']['anomalies_by_column'].items():
+    print(f"  {col}: {count}")
