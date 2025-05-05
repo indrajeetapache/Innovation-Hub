@@ -16,7 +16,7 @@ from .data_module import DataManager
 from .model_module import ModelFactory
 from .training_module import Trainer
 from .detection_module import AnomalyDetector, MultiLayerAnomalyDetector
-from .visualization_module import Visualizer
+from .visualization import Visualizer
 
 def run_anomaly_detection(
     df: pd.DataFrame,
