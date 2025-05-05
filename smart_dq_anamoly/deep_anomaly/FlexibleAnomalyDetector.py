@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Optional, Any, Union
-from core_pipeline import run_anomaly_detection
+from .core_pipeline import run_anomaly_detection
 import os
 import matplotlib.pyplot as plt
 
