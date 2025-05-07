@@ -1,6 +1,3 @@
-Absolutely! Here's a **plain-English, human-readable, technical explanation** of your anomaly detection pipeline — perfect for presenting to non-ML stakeholders, tech leads, or your team without sounding overly academic:
-
----
 
 ### 📊 **How We’re Catching Unusual Patterns in the Data**
 
