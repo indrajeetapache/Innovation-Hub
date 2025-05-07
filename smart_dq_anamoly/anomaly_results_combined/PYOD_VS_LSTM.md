@@ -96,7 +96,7 @@ Each chart shows one column like `balance` or `market_condition` over time.
 
 ### 🏁 Final Thought
 
-You now have a **powerful hybrid anomaly detection system** that:
+ **hybrid anomaly detection system** that:
 
 * Combines deep learning with statistical logic
 * Flags important issues that would be missed by rule-based systems
