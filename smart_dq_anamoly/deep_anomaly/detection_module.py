@@ -156,7 +156,8 @@ class AnomalyDetector:
             - Threshold value
         """
         # Dynamically import TimeSeriesDataset to avoid circular imports
-        from data_module import TimeSeriesDataset
+        #from data_module import TimeSeriesDataset this is not working as it unable to import
+        from deep_anomaly.data_module import TimeSeriesDataset
         
         # Create dataset and loader
         dataset = TimeSeriesDataset(data, seq_length)
