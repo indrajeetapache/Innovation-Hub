@@ -1,5 +1,8 @@
-import pandas as pd
+"""
+Anomaly detection components for time series analysis.
+"""
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Dataset
@@ -155,12 +158,12 @@ class AnomalyDetector:
             - Array of reconstruction errors
             - Threshold value
         """
-        # Dynamically import TimeSeriesDataset to avoid circular imports
-        #from data_module import TimeSeriesDataset this is not working as it unable to import
+        # Import TimeSeriesDataset with correct package path
         from deep_anomaly.data_module import TimeSeriesDataset
         
         # Create dataset and loader
         dataset = TimeSeriesDataset(data, seq_length)
+        print(f"Created dataset with {len(dataset)} sequences of length {seq_length}")
         loader = DataLoader(dataset, batch_size=batch_size, shuffle=False)
         
         # Detect anomalies
@@ -393,7 +396,9 @@ class MultiLayerAnomalyDetector:
         Returns:
             Dictionary with anomaly detection results
         """
-        print("\n=== Multi-Layer Anomaly Detection ===")
+        # Store original data length for proper padding later
+        original_length = len(data)
+        print(f"\n=== Multi-Layer Anomaly Detection on {original_length} data points ===")
         
         # 1. Detect statistical anomalies
         print("\nLayer 1: Statistical anomaly detection")
@@ -401,7 +406,7 @@ class MultiLayerAnomalyDetector:
         
         # 2. Detect seasonal anomalies if requested
         seasonal_anomalies = None
-        if detect_seasonal:
+        if detect_seasonal and timestamp is not None:
             print("\nLayer 2: Seasonal anomaly detection")
             try:
                 seasonal_anomalies = self.detect_seasonal_anomalies(data, timestamp, seasonal_period)
@@ -415,33 +420,67 @@ class MultiLayerAnomalyDetector:
             data, seq_length, batch_size, threshold, method, contamination, sigma
         )
         
-        # 4. Combine all anomalies
+        # 4. Combine all anomalies with proper handling of different lengths
         print("\nCombining anomaly detection results")
-        combined_anomalies = np.zeros(len(data), dtype=bool)
+        # Initialize combined anomalies array with the original data length
+        combined_anomalies = np.zeros(original_length, dtype=bool)
         
-        # Convert to 1D if needed
-        if len(statistical_results['combined_statistical'].shape) > 1 and statistical_results['combined_statistical'].shape[1] == 1:
-            stat_anomalies = statistical_results['combined_statistical'].flatten()
+        # Pad ML anomalies to match original length if needed
+        ml_anomalies_padded = np.zeros(original_length, dtype=bool)
+        ml_length = len(ml_anomalies)
+        
+        # Check if ML anomalies length is different from original
+        if ml_length != original_length:
+            print(f"Note: ML anomalies length ({ml_length}) differs from original data length ({original_length})")
+            # Place ML anomalies at appropriate position (typically starts at seq_length-1)
+            offset = seq_length - 1
+            # Ensure we don't exceed array bounds
+            valid_length = min(ml_length, original_length - offset)
+            if valid_length > 0:
+                ml_anomalies_padded[offset:offset+valid_length] = ml_anomalies[:valid_length]
+            ml_anomalies = ml_anomalies_padded
         else:
-            # If multiple features, take any anomaly
-            stat_anomalies = np.any(statistical_results['combined_statistical'], axis=1)
+            # If lengths match, no padding needed
+            ml_anomalies_padded = ml_anomalies
         
-        # Combine statistical and ML anomalies
-        combined_anomalies = stat_anomalies | ml_anomalies
+        # Process statistical anomalies
+        if len(statistical_results['combined_statistical'].shape) > 1:
+            # If multi-dimensional, flatten by taking any anomaly across features
+            stat_anomalies = np.any(statistical_results['combined_statistical'], axis=1)
+        else:
+            stat_anomalies = statistical_results['combined_statistical']
+        
+        # Ensure stat anomalies match original length
+        if len(stat_anomalies) != original_length:
+            print(f"Warning: Statistical anomalies length ({len(stat_anomalies)}) differs from original data length ({original_length})")
+            temp = np.zeros(original_length, dtype=bool)
+            valid_length = min(len(stat_anomalies), original_length)
+            temp[:valid_length] = stat_anomalies[:valid_length]
+            stat_anomalies = temp
+        
+        # Combine statistical and ML anomalies safely
+        combined_anomalies = stat_anomalies | ml_anomalies_padded
         
         # Add seasonal anomalies if available
         if seasonal_anomalies is not None:
+            # Ensure seasonal anomalies match original length
+            if len(seasonal_anomalies) != original_length:
+                print(f"Warning: Seasonal anomalies length ({len(seasonal_anomalies)}) differs from original data length ({original_length})")
+                temp = np.zeros(original_length, dtype=bool)
+                valid_length = min(len(seasonal_anomalies), original_length)
+                temp[:valid_length] = seasonal_anomalies[:valid_length]
+                seasonal_anomalies = temp
             combined_anomalies = combined_anomalies | seasonal_anomalies
         
         # Count final anomalies
         total_anomalies = np.sum(combined_anomalies)
-        print(f"\nFinal results: {total_anomalies} anomalies detected out of {len(data)} samples "
-              f"({100*total_anomalies/len(data):.2f}%)")
+        print(f"\nFinal results: {total_anomalies} anomalies detected out of {original_length} samples "
+              f"({100*total_anomalies/original_length:.2f}%)")
         
         return {
             'combined_anomalies': combined_anomalies,
             'statistical_anomalies': statistical_results,
-            'ml_anomalies': ml_anomalies,
+            'ml_anomalies': ml_anomalies_padded,
             'seasonal_anomalies': seasonal_anomalies,
             'reconstruction_errors': reconstruction_errors,
             'ml_threshold': ml_threshold
