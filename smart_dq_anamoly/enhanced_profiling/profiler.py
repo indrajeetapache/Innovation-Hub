@@ -60,6 +60,10 @@ class TimeSeriesProfiler:
         return pd.concat(profiles, axis=1) if profiles else pd.DataFrame()
 
     def _profile_numeric_column(self, date_series, hist_series, col_name):
+        # Check if we have enough data to calculate statistics
+        if len(date_series) <= 1 or date_series.nunique() <= 1:
+            print(f"[WARNING] Insufficient variation in {col_name} for date profile, statistics may be NaN")
+        
         stats = {
             f"{col_name}_mean": date_series.mean(),
             f"{col_name}_median": date_series.median(),
@@ -68,23 +72,35 @@ class TimeSeriesProfiler:
             f"{col_name}_max": date_series.max(),
             f"{col_name}_range": date_series.max() - date_series.min(),
             f"{col_name}_iqr": date_series.quantile(0.75) - date_series.quantile(0.25),
-            f"{col_name}_skew": date_series.skew(),
-            f"{col_name}_kurtosis": date_series.kurtosis(),
+            f"{col_name}_skew": date_series.skew() if len(date_series) > 2 else np.nan,
+            f"{col_name}_kurtosis": date_series.kurtosis() if len(date_series) > 3 else np.nan,
             f"{col_name}_zeros_pct": (date_series == 0).mean() * 100,
             f"{col_name}_nulls_pct": date_series.isna().mean() * 100
         }
-
+        
+        # Replace infinite values with NaN
+        for key, value in stats.items():
+            if np.isinf(value) if isinstance(value, (int, float)) else False:
+                stats[key] = np.nan
+                print(f"[WARNING] Infinite value in {key}, replaced with NaN")
+        
+        # Only calculate window statistics if we have enough historical data
         for window in self.window_sizes:
             if len(hist_series) >= window:
                 last_n = hist_series.iloc[-window:]
+                
+                # Check for division by zero or near-zero
+                last_n_std = last_n.std()
+                last_n_range = last_n.max() - last_n.min()
+                
                 stats.update({
                     f"{col_name}_mean_diff_{window}d": stats[f"{col_name}_mean"] - last_n.mean(),
                     f"{col_name}_median_diff_{window}d": stats[f"{col_name}_median"] - last_n.median(),
-                    f"{col_name}_std_ratio_{window}d": stats[f"{col_name}_std"] / max(last_n.std(), 1e-8),
-                    f"{col_name}_range_ratio_{window}d": stats[f"{col_name}_range"] / max(last_n.max() - last_n.min(), 1e-8),
-                    f"{col_name}_zscore_{window}d": (stats[f"{col_name}_mean"] - last_n.mean()) / max(last_n.std(), 1e-8)
+                    f"{col_name}_std_ratio_{window}d": stats[f"{col_name}_std"] / max(last_n_std, 1e-8) if not np.isnan(last_n_std) else np.nan,
+                    f"{col_name}_range_ratio_{window}d": stats[f"{col_name}_range"] / max(last_n_range, 1e-8) if not np.isnan(last_n_range) else np.nan,
+                    f"{col_name}_zscore_{window}d": (stats[f"{col_name}_mean"] - last_n.mean()) / max(last_n_std, 1e-8) if not np.isnan(last_n_std) else np.nan
                 })
-
+        
         return pd.DataFrame([stats])
 
     def _profile_categorical_column(self, date_series, hist_series, col_name):
