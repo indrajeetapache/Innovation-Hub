@@ -29,11 +29,11 @@ class AnomalyFusion:
         if method == 'union':
             combined_indices = lstm_indices.union(pyod_indices)
             print(f"[AnomalyFusion] Union of anomalies → Total: {len(combined_indices)}")
-        
+
         elif method == 'intersection':
             combined_indices = lstm_indices.intersection(pyod_indices)
             print(f"[AnomalyFusion] Intersection of anomalies → Total: {len(combined_indices)}")
-        
+
         elif method == 'weighted':
             print("[AnomalyFusion] Performing weighted score fusion...")
 
@@ -74,3 +74,25 @@ class AnomalyFusion:
 
         print(f"[AnomalyFusion] Combination complete. Returning result dictionary.\n")
         return result
+
+    @staticmethod
+    def extract_lstm_result_for_fusion(profile_output: dict) -> dict:
+        """
+        Prepare LSTM profile result dict for fusion by extracting required keys.
+
+        Args:
+            profile_output: Dict for a target from lstm_profile_results
+
+        Returns:
+            Dict with 'anomaly_indices' and 'anomaly_scores'
+        """
+        if 'anomaly_indices' not in profile_output:
+            raise ValueError("Missing 'anomaly_indices' in LSTM profile result.")
+        if 'full_results' not in profile_output or 'reconstruction_errors' not in profile_output['full_results']:
+            raise ValueError("Missing 'reconstruction_errors' in LSTM profile result.")
+        
+        return {
+            'anomaly_indices': profile_output['anomaly_indices'],
+            'anomaly_scores': profile_output['full_results']['reconstruction_errors'],
+            'contamination': 0.01  # Optional: customize per config
+        }
